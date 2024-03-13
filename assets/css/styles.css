@@ -1,0 +1,169 @@
+@import url("./reset.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-family: Inter;
+}
+.outer-container {
+    width: 435px;
+    border: 1px solid #000;
+    background-color: #FBFBFB;
+    padding: 30px;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.unsettled-container {
+    background-color: #D9D9D9;
+    padding: 15px;
+}
+
+.unsettled-container h6 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.unsettled-container > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.unsettled-container > div > div {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+button {
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    padding: 0px 15px; 
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #323131;
+}
+
+.primary-button {
+    background-color: #182B8C;
+}
+
+.primary-button:hover {
+    background-color: #2f419c;
+}
+
+.users-container {
+    padding: 15px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.users-container img {
+    width: 80px;
+}
+
+.new-container {
+    background-color: #D9D9D9;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.new-container label {
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.new-container textarea {
+    width: 100%;
+    font-size: 16px;
+    font-family: Inter;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.new-container > div:nth-child(2) {
+    display: flex;
+    gap: 15px;
+}
+
+.new-container > div:nth-child(2) div {
+    flex-basis: 70%;
+}
+
+.new-container input {
+    width: 100%;
+    font-size: 16px;
+    font-family: Inter;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.new-container button{
+    flex-basis: 30%;
+}
+
+.expenses-container > div {
+    border: 1px solid #000;
+    margin-bottom: 1px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expenses-container > div span {
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.expenses-container > div time {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.expenses-container .amount {
+    font-size: 18px;
+    font-weight: bold;
+}
+.settled-row {
+    background-color: #F2EEEE;
+}
+
+.expenses-container > div.expenses-footer {
+    border: none;
+    display: flex;
+    justify-content: center;
+}
+
+button.unstyled-button {
+    background-color: transparent;
+    color: #000;
+}
+
+button.unstyled-button:hover {
+    text-decoration: underline;
+}
+
+label span {
+    color: red;
+}
