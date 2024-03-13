@@ -167,3 +167,9 @@ button.unstyled-button:hover {
 label span {
     color: red;
 }
+
+.expenses-container h3 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
