@@ -127,6 +127,7 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
 }
 
 .expenses-container > div span {
@@ -145,8 +146,12 @@ button:hover {
     font-size: 18px;
     font-weight: bold;
 }
-.settled-row {
-    background-color: #F2EEEE;
+.expenses-container > div >div.settled-row {
+    background-color: #D9D9D9;
+}
+.settled-row:before {
+    content: "✅ ";
+    margin-right: 10px; 
 }
 
 .expenses-container > div.expenses-footer {
@@ -173,4 +178,9 @@ label span {
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+#error-msg {
+    color: #ff0000;
+    font-size: 12px;
 }
