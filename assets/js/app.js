@@ -98,7 +98,7 @@
             <div ${expense.isSettled ? "class=settled-row" : ""}>
                 <div>
                     <span>${expense.description}</span>
-                    <time>${expense.date}</time>
+                    <time>${expense.date.toLocaleString()}</time> 
                 </div>
                 <div  class="amount">
                     $${expense.amount}
@@ -129,7 +129,7 @@
         };
         const newExpense = new ExpensesItem(description, parseFloat(amount));
         splitCostObject.addNewExpenses(newExpense);
-        populateExpenses(splitCostObject.expenses);
+        populateExpenses(splitCostObject.expenses.slice(0, 5));
         populateUnsettledAmount();
 
         descriptionElement.value = "";

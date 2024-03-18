@@ -6,3 +6,7 @@ A simple web application to split cost among room mates.
 * HTML
 * CSS
 * Javascript
+
+### App Screenshot
+
+![Split Cost Web Application](./assets/images/screenshot.png)
