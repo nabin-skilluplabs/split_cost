@@ -15,8 +15,8 @@
         this.date = new Date();
     }
 
-    function SplitCost() {
-        this.users = getUsers();
+    function SplitCost(users) {
+        this.users = users;
         this.expenses = [];
         this.unsettledAmount = 0;
 
@@ -39,6 +39,15 @@
                 }
             });
             this.unsettledAmount = totalExpenses / usersCount;
+        }
+
+        this.removeUser = function(event) {
+            console.log(this);
+            const index = event.target.getAttribute("data-index");
+            if((this.users.length > 1) &&  !this.unsettledAmount) {
+                this.users.splice(index, 1);
+                populateUsers(this.users);
+            }
         }
     }
 
@@ -63,18 +72,7 @@
         return allExpenses;
     }   
 
-    function removeUser(event) {
-        const index = event.target.getAttribute("data-index");
-        if((splitCostObject.users.length > 1) &&  !splitCostObject.unsettledAmount) {
-            splitCostObject.users.splice(index, 1);
-            populateUsers(splitCostObject.users);
-        }
-        
-        // if(event.target.tagName === "IMG") {
-        //     const index = event.target.getAttribute("data-index");
-        //     console.log({index});
-        // }
-    }
+    
 
     function populateUsers(users) {
         const userContainer = document.querySelector(".users-container");
@@ -86,9 +84,10 @@
         userContainer.innerHTML = userElements.join("");
         const imageElements = document.querySelectorAll(".users-container img");
         imageElements.forEach(img => {
-            img.addEventListener("click", removeUser);
-        })
-        // document.querySelector(".users-container").addEventListener("click", removeUser);
+            img.addEventListener("click", (event) => {
+                splitCostObject.removeUser(event)
+            });
+        });
     }
 
     function populateExpenses(expenses) {
@@ -156,7 +155,7 @@
     addNewEventListener();
     addSettleNowEventListner();
 
-    const splitCostObject = new SplitCost();
+    const splitCostObject = new SplitCost(getUsers());
     populateUsers(splitCostObject.users);
     populateExpenses(splitCostObject.expenses);
 
